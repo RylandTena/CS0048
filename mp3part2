@@ -1,0 +1,24 @@
+def displayMenu():
+    print('Menu:')
+    print('1. Convert Celsius to Fahrenheit')
+    print('2. Convert Fahrenheit to Celsius')
+    print('3. Exit')
+
+c_to_f = lambda c: c*(9/5)+32 
+f_to_c = lambda f: (f-32)*(5/9) 
+
+while True:
+    displayMenu()
+    option = input('Enter your choice (1-3): ')
+    
+    if option == "1":
+        c = eval(input('Enter temperature in Celsius: '))
+        print("Temperature in Fahrenheit: ",c_to_f(c))
+    elif option == "2":
+        f = eval(input('Enter temperature in Fahrenheit: '))
+        print("Temperature in Fahrenheit: ",f_to_c(f))
+    elif option == "3":
+        print('Exiting program...')
+        break
+    else:
+        print('Invalid input!')
