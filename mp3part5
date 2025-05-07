@@ -1,0 +1,38 @@
+scores = {}
+
+def displayMenu():
+    print('Menu:')
+    print('1. Add Score')
+    print('2. Calculate Average')
+    print('3. Exit')
+
+def addScore(subject,score):
+    global scores
+    scores[subject] = score
+    print("Score added.")
+
+def average():
+    global scores
+
+    total = 0
+    for score in scores.values():
+        total += score
+    
+    average = total/(len(scores))
+    print(f'Average Grade: {average:.2f}')
+
+while True:
+    displayMenu()
+    option = input('Enter your choice (1-3): ')
+    
+    if option == "1":
+        subject = input('Enter the subject: ')
+        score = eval(input('Enter the score: '))
+        addScore(subject,score)
+    elif option == "2":
+        average()
+    elif option == "3":
+        print('Exiting program...')
+        break
+    else:
+        print('Invalid input!')
