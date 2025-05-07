@@ -1,0 +1,35 @@
+import random
+
+def displayMenu():
+    print('Menu:')
+    print('1. Play a number guessing game')
+    print('2. Exit')
+
+def guess():
+    attempts = 0
+    number = random.randint(1,100)
+
+    while True:
+        attempts += 1
+        guess = eval(input('Guess the number (1-100): '))
+        if guess == number:
+            print(f'Congratulations! You guessed the number in {attempts} attempts.')
+            break
+        else:
+            if guess < number:
+                print('Too low!')
+            else:
+                print('Too High!')
+
+
+while True:
+    displayMenu()
+    option = input('Enter your choice (1-2): ')
+    
+    if option == "1":
+        guess()
+    elif option == "2":
+        print('Exiting program...')
+        break
+    else:
+        print('Invalid input!')
