@@ -30,7 +30,7 @@ def viewTasks():
 
 while True:
     displayMenu()
-    option = input('Enter your choice (1-3): ')
+    option = input('Enter your choice (1-4): ')
     
     if option == "1":
         addTask(input('Enter the task to add: '))
